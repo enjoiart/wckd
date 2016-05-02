@@ -1,0 +1,69 @@
+// ==========================================================
+// = Footer			                                =
+// ==========================================================
+//@import "compass/layout.scss";
+
+@import "helpers/sticky-footer.scss";
+
+footer h3 { color:$secondary; font-weight:bold; }
+
+footer .logo img { text-align:center; height:120px; margin-top:-63px; width:100%; }
+footer .logo img:hover { color:#fff; }
+//footer .logo {background: url('logo-square.svg') 0 0 no-repeat; height:150px; margin-top:-105px; margin-bottom:10px;}
+footer a { color:$grey_regular; }
+footer {
+	position: relative;
+	font-size:80%;
+	line-height:1.5em;
+	font-weight:bold;
+	border-top: 2px solid $secondary;
+	background: $primary;
+	color: tint($primary, 50%);
+		ul { margin-bottom:0px; list-style: none; padding-left: 15px; }
+		section {
+			@include outer-container;
+			@include row;
+			margin-top:10px;
+			padding:0px 30px;
+			div { @include span-columns(2); }
+			div.form { @include span-columns(6); }
+			form input[type="text"], input[type="email"], textarea{
+				background: tint($primary_med, 5%); 
+				border: $primary_light; 
+				color: $grey_light;
+				margin-bottom: -10px;	
+			}
+			.button { padding: 10px 18px 10px; }
+			form span.split { width: 48%; float:left; }
+			form span.right { float: right; }
+		}
+	}
+//footer button a:hover{color:#fff;}
+footer .top-bar { height:80px; background:$secondary; margin-top:-61px; }
+footer .bottom-bar {
+	@include outer-container;
+	height:50px; 
+	padding:20px;
+	background:$primary;
+
+	div{border-top: 2px solid shade($primary, 10%);}
+		p{
+			color: shade($primary, 30%); 
+			font-weight:bold;
+			padding:10px 0;
+		}
+}
+@media screen and (max-width: 1300px){
+//footer section .services, .resources, .connect{padding: 0 10px;}
+}
+
+@media screen and (max-width: 900px){
+	footer { height:550px; }
+	footer section { padding: 30px 10px; }
+	footer section div { @include span-columns(3); }
+	footer section div.form { @include span-columns(12); }
+
+	}
+@media screen and (max-width: 400px){
+	footer section .form { display:none; }
+}

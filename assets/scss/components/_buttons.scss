@@ -1,0 +1,134 @@
+
+.button {
+    display: inline-block;
+    background: $primary;
+    padding: 18px 24px 19px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    -webkit-font-smoothing: subpixel-antialiased; /* Text Rendering hack to prevent flickering */
+}
+
+.button .arrow,
+.button .play {
+    display: inline-block;
+    width: 5px;
+    height: 8px;
+    margin: 0 4px 0 50px;
+    background: url('arrow-right.svg') 0 0 no-repeat;
+}
+
+.button .play {
+    position: relative;
+    background: none;
+}
+
+.button .play svg {
+    position: absolute;
+    top: -2px;
+}
+
+.button:hover {
+    background: $secondary;
+    color: #ffffff;
+}
+
+.button:hover .arrow,
+.button:hover .play {
+    -webkit-animation: arrow-bounce 0.3s 0s ease-in-out 1 forwards;
+    -moz-animation: arrow-bounce 0.3s 0s ease-in-out 1 forwards;
+    -ms-animation: arrow-bounce 0.3s 0s ease-in-out 1 forwards;
+    
+
+}
+
+.button.light {
+    background: #ffffff;
+    color: #1f212c;
+}
+
+.button.light:hover {
+    color: #212124;
+}
+
+.button.light .arrow {
+    background: url('arrow-right-black.svg');
+}
+
+.button.light.outline {
+    background: none;
+    border: 3px solid $grey_light;
+    color: $grey_light;
+}
+
+.button.light.outline:hover {
+    background: $secondary;
+    color: #ffffff;
+    border: 3px solid $secondary;
+}
+
+.button + .button {
+    margin-left: 5px;
+}
+
+.button {
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    border: none;
+    font-family: $body_family;
+    line-height: 10px;
+    outline: none;
+    cursor: pointer;
+
+}
+
+@import "../helpers/arrow-bounce.scss";
+
+
+/* LEFT TO RIGHT Link Underline 
+.content a, .intro a {
+    display: inline-block;
+}
+.content a:after, .intro a:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    background: transparent;
+    -moz-transition: width .5s ease, background-color .5s ease;
+    -o-transition: width .5s ease, background-color .5s ease;
+    -ms-transition: width .5s ease, background-color .5s ease;
+    -webkit-transition: width .5s ease, background-color .5s ease;
+    transition: width .5s ease, background-color .5s ease;
+
+}
+.content a:hover:after, .intro a:hover:after {
+    width: 100%;
+    background: $link_hover;
+}
+*/
+
+/* LEFT TO RIGHT Link Underline */
+a.underline {
+    display: inline-block;
+}
+a.underline:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    background: transparent;
+    -moz-transition: width .5s ease, background-color .5s ease;
+    -o-transition: width .5s ease, background-color .5s ease;
+    -ms-transition: width .5s ease, background-color .5s ease;
+    -webkit-transition: width .5s ease, background-color .5s ease;
+    transition: width .5s ease, background-color .5s ease;
+
+}
+a.underline:hover:after {
+    width: 100%;
+    background: $link_hover;
+}

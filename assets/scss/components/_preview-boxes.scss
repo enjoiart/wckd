@@ -1,0 +1,207 @@
+ul.cs-style-2 .space{display:block; position:relative; margin-top:50px; padding-top:50px;}
+section.preview.wrap li {
+	@include span-columns(3);
+}
+//@media screen and (min-device-width: 900px) and (max-width: 1300px){
+@media screen and (max-width: 1300px){
+.preview li{
+	width: 280px;
+	}
+}
+@media screen and (max-width: 1210px){
+.preview li{
+	width: auto;
+	}
+}
+/*section.preview li, .portfolio li {
+	@include span-columns(3);
+}
+
+@media screen and (max-width: 1050px){
+	section.preview li, .portfolio li {
+		@include span-columns(6);
+		@include clearfix;
+	}
+}*/
+section.preview img {
+	border: 1px solid $grey_extra_light;
+}
+section.promoted li {
+ @include omega; 
+
+}
+section.portfolio li.promote{
+	@include span-columns(6);
+	 @include omega; 
+}
+
+section.preview{
+		margin: 0 auto;
+		list-style: none;
+		text-align: center;
+		padding:40px 0 90px 0;
+		h3{
+			padding-bottom:1em;
+		}
+	}
+
+.preview ul{
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 0px;
+	padding: 0 20px;
+}
+.preview li {
+	display: inline-block;
+	margin: 0;
+	text-align: left;
+	position: relative;
+	//width:375px; // 4 cols
+	//width: 350px; // 5 Cols
+	//width: 470px; 3 Cols
+}
+
+.preview figure {
+	margin: 0;
+	position: relative;
+
+}
+
+.preview figure img {
+	max-width: 100%;
+	display: block;
+	position: relative;
+}
+
+.preview figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	background: $primary;
+	color: #fff;
+}
+
+.preview figcaption h3 {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+.preview figcaption span {
+	color: $secondary;
+}
+.preview figcaption span:before {
+	content: 'in ';
+}
+
+.preview figcaption a {
+	text-align: center;
+	padding: 5px 10px;
+	border-radius: 2px;
+	display: inline-block;
+	background: $secondary;
+	color: #fff;
+}
+
+
+/* Caption Style 2 */
+.cs-style-2 figure {overflow: hidden;}
+.cs-style-2 figcaption h3{font-weight: bold;}
+.cs-style-2 figcaption {
+	margin: auto;
+  	position: absolute;
+  	top: 0; left: 0; bottom: 0; right: 0;
+	font-style: normal;
+	height: 95%;
+	width: 95%;
+	opacity: 0;
+	-webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.no-touch .cs-style-2 figure:hover figcaption,
+.cs-style-2 figure.cs-hover figcaption {
+	opacity: .9;
+	padding-top: 10px;
+	-webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.cs-style-2 figcaption a {
+	font-family: "wckd";
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+
+/* Caption Style 3 */
+.cs-style-3 figure {
+	overflow: hidden;
+}
+
+/*.cs-style-3 figure img {
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+
+}
+
+.no-touch .cs-style-3 figure:hover img,
+.cs-style-3 figure.cs-hover img {
+	
+	-webkit-transform: translateY(-50px);
+	-moz-transform: translateY(-50px);
+	-ms-transform: translateY(-50px);
+	transform: translateY(-50px);
+}*/
+
+.cs-style-3 figcaption {
+	height: 100px;
+	width: 100%;
+	top: auto;
+	bottom: 0;
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	transform: translateY(100%);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.3s 0.3s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.3s 0.3s;
+	transition: transform 0.4s, opacity 0.3s 0.3s;
+}
+
+.no-touch .cs-style-3 figure:hover figcaption,
+.cs-style-3 figure.cs-hover figcaption {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+	transition: transform 0.4s, opacity 0.1s;
+}
+
+.cs-style-3 figcaption a {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+
+@media screen and (max-width: 31.5em) {
+	.grid {
+		padding: 10px 10px 100px 10px;
+	}
+	.grid li {
+		width: 100%;
+		min-width: 300px;
+	}
+}

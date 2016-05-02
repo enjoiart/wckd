@@ -1,0 +1,68 @@
+// Link Underline
+#menu {
+	margin-top:20px;
+	float:right;
+	font-family:"Effra W01 Regular", Arial, sans-serif;
+	font-size:13px;
+	color:#000;
+	text-transform:uppercase;
+}
+
+#menu a, #menu span {
+	display:inline-block;
+	color:#000;
+	text-decoration:none;
+	margin-left:40px;
+	opacity:0.7;
+	letter-spacing:1px;
+	line-height:27px;
+	-webkit-font-smoothing:antialiased;
+	background: linear-gradient(to right, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.1) 50%);
+	background-repeat: no-repeat;
+	background-size: 200% 2px;
+	background-position: right bottom;
+	-moz-transition: opacity 0.2s ease-out, background-position 0.2s ease-out, color 0.3s 2.4s ease-out;
+    -o-transition: opacity 0.2s ease-out, background-position 0.2s ease-out, color 0.3s 2.4s ease-out;
+    -ms-transition: opacity 0.2s ease-out, background-position 0.2s ease-out, color 0.3s 2.4s ease-out;
+	-webkit-transition: opacity 0.2s ease-out, background-position 0.2s ease-out, color 0.3s 2.4s ease-out;
+    transition: opacity 0.2s ease-out, background-position 0.2s ease-out, color 0.3s 2.4s ease-out;
+}
+
+body.about #menu a, body.about #menu span, body.contact #menu a, body.contact #menu span {
+	color:#FFF;
+	-moz-osx-font-smoothing: grayscale;
+	background: linear-gradient(to right, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.1) 50%);
+	background-repeat: no-repeat;
+	background-size: 200% 2px;
+	background-position: right bottom;
+	-moz-transition: opacity 0.2s ease-out, background-position 0.2s ease-out, color 0.3s 0.1s ease-out;
+    -o-transition: opacity 0.2s ease-out, background-position 0.2s ease-out;
+    -ms-transition: opacity 0.2s ease-out, background-position 0.2s ease-out;
+	-webkit-transition: opacity 0.2s ease-out, background-position 0.2s ease-out;
+    transition: opacity 0.2s ease-out, background-position 0.2s ease-out, color 0.3s 0.1s ease-out;
+}
+
+#menu a:hover, #menu span:hover {
+	background-position: left bottom;
+	opacity:1;
+	cursor:pointer;
+}
+
+
+.sliding-u-l-r {
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 3px solid transparent;    
+    width: 0px;
+   	-moz-transition: 0.5s ease;
+   	-o-transition: 0.5s ease;
+   	-ms-transition: 0.5s ease;
+   	-webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+    white-space: nowrap;
+    height: 20px;
+}
+.sliding-u-l-r:hover {
+    border-bottom: 3px solid blue;
+    width: 200px;
+}

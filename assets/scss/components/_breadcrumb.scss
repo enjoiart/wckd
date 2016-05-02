@@ -1,0 +1,11 @@
+section.breadcrumb{
+	@include outer-container; 
+	font-size:80%;
+	color:$grey_dark;
+	border-top: 2px solid $grey_extra_light;
+	border-bottom: 1px solid $grey_extra_light;
+	margin-bottom:5px;
+	div{padding: 0 10px;}
+	a{color:$grey_regular;}
+	a:last-child{color:$secondary;}
+}

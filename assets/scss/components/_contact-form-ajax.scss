@@ -1,0 +1,101 @@
+
+/* form style */
+.form-style{
+	max-width: 450px;
+	font: $body_family;
+	margin: 0 auto;
+}
+
+.form-style label{
+    display: block;
+}
+.form-style label > span{
+    width: 100%;
+    font-weight: bold;
+    float: left;
+    padding-top: 8px;
+    padding-right: 5px;
+}
+.form-style span.required{
+    color:red;
+}
+.form-style .tel-number-field{
+    width: 100%;
+}
+.form-style  .long{
+    width: 82%;
+    float:right;
+}
+.form-style input.input-field{
+    width: 100%; 
+}
+
+.form-style input.input-field,
+.form-style .tel-number-field,
+.form-style .textarea-field,
+ .form-style .select-field{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out; 
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    box-shadow: 1px 1px 4px #EBEBEB;
+    -moz-box-shadow: 1px 1px 4px #EBEBEB;
+    -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 7px;
+    outline: none;
+}
+.form-style .input-field:focus,
+.form-style .tel-number-field:focus,
+.form-style .textarea-field:focus,  
+.form-style .select-field:focus{
+    border: 1px solid #0C0;
+}
+.form-style .textarea-field{
+    height:100px;
+    width: 100%;
+}
+
+.form-style .success{
+    text-align:center;
+	padding: 5px 10px 5px 10px;
+    margin: 0 auto;
+	border: none;
+	font-weight: bold;
+	color: #2E6800;
+}
+.form-style .error {
+	background: #FFE8E8;
+	padding: 5px 10px 5px 10px;
+	margin: 0px 0px 5px 0px;
+	border: none;
+	font-weight: bold;
+	color: #FF0000;
+	border-left: 3px solid #FF0000;
+}
+
+.form-style input[type="button"],
+.form-style input[type="submit"] {
+    margin-top:-20px;
+    background-color: $primary;
+    //border: 1px solid #17445E;
+    //display: inline-block;
+    font-size: .8em;
+    cursor: pointer;
+    color: #FFFFFF;
+    //padding: 8px 18px;
+    padding: 18px 24px 19px;
+    text-decoration: none;
+    
+}
+.form-style input[type="button"]:hover,
+.form-style input[type="submit"]:hover {
+   
+    background-color: $secondary;
+}

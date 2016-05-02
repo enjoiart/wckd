@@ -1,0 +1,461 @@
+// *
+// * WCKD.ME - Christopher Daley's Personal Portfolio
+// *
+// * Built using SASS - Bourbon, Neat & Compass 
+// *
+// * @author Chris Daley http://wckd.me
+// * 
+// * @version 1.0
+// */
+
+
+@import "compass/css3/opacity";
+@import "bourbon";
+@import "neat";
+
+// ==========================================================
+// = Site Variables                                         =
+// ==========================================================
+
+// Grid options =
+$gutter_width: 40px; // Your gutter width
+$columns: 12; // The amount of columns you want
+$max_width: 1600px; // Set a maximum width of the site
+
+// *
+// * Baseline
+// *
+// * Common settings for this:
+// *
+// * 100% for 16px font and 24px baseline.
+// *
+// * 75% for 12px font and 18px baseline.
+// *
+// *
+$baseline: 100%;
+
+// Font variables
+$body_color: #333;
+$heading_color: #111;
+
+$body_family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+$heading_family: 'Lato', "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+
+
+// Link colors
+$link: #6bac60;
+$link_hover: #3A96BD;
+
+// Select colors
+$select: #78aace;
+$select_color: #fff;
+
+// Default Colors
+$grey_extra_light: #F8F8F8;
+$grey_light: #eee;
+$grey_regular: #ccc;
+$grey_dark: #666;
+
+//Primary Colors
+$body_background: #fff;
+$primary: #252834;
+$primary_light: #41475C;
+$primary_med: #282B38;
+$primary_dark: #1C1E27;
+$secondary: #7dbd96;
+
+
+// ==========================================================
+// = Mixins                                                 =
+// ==========================================================
+
+// https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html 
+//
+// grayscale      ex: filter: grayscale(100%);
+// sepia          ex: filter: sepia(100%);
+// saturate       ex: filter: saturate(0%);
+// hue-rotate     ex: filter: hue-rotate(45deg);
+// invert         ex: filter: invert(100%);
+// brightness     ex: filter: brightness(15%);
+// contrast       ex: filter: contrast(200%);
+// blur           ex: filter: blur(2px);
+@mixin filter($filter-type,$filter-amount) { 
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+@mixin transparent {
+  @include opacity(.5); }
+@mixin opaque {
+  @include opacity(1);}
+
+
+// ==========================================================
+// = Import normalize baseline and grid                     =
+// ==========================================================
+
+@import "base/normalize.scss";
+@import "base/baseline.scss";
+@import "base/typography.scss";
+
+
+// ==========================================================
+// = Components				                                =
+// ==========================================================
+@import "components/nav.scss";
+@import "components/breadcrumb.scss";
+@import "components/contact-form-ajax.scss";
+@import "components/slideshow.scss";
+
+// ==========================================================
+// = Layout Styles			                                =
+// ==========================================================
+@import "layout/grid.scss";
+@import "layout/universal.scss";
+@import "layout/header.scss";
+@import "layout/footer.scss";
+
+// ==========================================================
+// = Component Styles			                                =
+// ==========================================================
+@import "components/icons.scss";
+@import "components/buttons.scss";
+@import "components/preview-boxes.scss";
+@import "components/sort.scss";
+
+// ==========================================================
+// = Page Styles			                                =
+// ==========================================================
+@import "pages/contact.scss";
+
+
+// ==========================================================
+// = Vendor			                                =
+// ==========================================================
+@import "vendors/lightbox.scss";
+@import "vendors/animate.scss";
+
+// ==========================================================
+// = Your custom styles go here                             =
+// ==========================================================
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+
+
+
+
+
+.revealOnScroll {
+    opacity: 0
+}
+
+.revealOnScroll.animated {
+    opacity: 1
+}
+
+
+.come-in-right {
+  -webkit-transform: translateX(150px);
+      -ms-transform: translateX(150px);
+          transform: translateX(150px);
+  -webkit-animation: come-in 0.8s ease forwards;
+          animation: come-in 0.8s ease forwards;
+}
+.come-in-right:nth-child(odd) {
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
+@-webkit-keyframes come-in-right {
+  to { -webkit-transform: translateX(0); transform: translateX(0); }
+}
+
+@keyframes come-in-right {
+  to { -webkit-transform: translateX(0); transform: translateX(0); }
+}
+
+.come-in {
+  -webkit-transform: translateX(-150px);
+      -ms-transform: translateX(-150px);
+          transform: translateX(-150px);
+  -webkit-animation: come-in 0.8s ease forwards;
+          animation: come-in 0.8s ease forwards;
+}
+.come-in:nth-child(odd) {
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
+.already-visible {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-animation: none;
+          animation: none;
+}
+
+@-webkit-keyframes come-in {
+  to { -webkit-transform: translateX(0); transform: translateX(0); }
+}
+
+@keyframes come-in {
+  to { -webkit-transform: translateX(0); transform: translateX(0); }
+}
+
+
+ 
+/* Spam Prevention 
+<my-email data-user="chris" data-domain="wckd.me"></my-email>
+*/
+  my-email::after {
+    content: attr(data-domain);
+  }
+  my-email::before {
+    content: attr(data-user) "\0040";
+  }
+/* Spam Prevention
+chris<span class="domain">wckd.me</span>
+*/
+.domain::before {
+    content: "\0040";    /* Unicode character for @ symbol */
+  }
+
+
+
+/**
+ * NOTE
+ * Don't add breakpoints aimed at device pixel widths,
+ * add them where they suit best for your design.
+ */
+
+
+
+
+ @media screen and (max-width: 1920px){
+	nav {
+		font-size: 80%;
+		height:65px;
+	}
+	div.hero-bg{background:#fff;}
+	}
+@media screen and (max-width: 920px){
+	nav {
+		font-size: 80%;
+		height:65px;
+		
+	}
+	.hi-icon{
+		width: 80px;
+		//height: 80px;
+		margin: 15px 15px;
+	}
+	.hi-icon:before {
+		
+		font-size: 42px;
+		line-height: 80px;
+	}
+	
+	}
+@media screen and (max-width: 768px){
+
+
+	section.preview{
+		padding:40px 0 40px 0;
+		margin-bottom:80px;
+		ul.cs-style-3 li{
+			@include span-columns(6);
+		}
+	}
+
+
+	.hi-icon{
+		width: 75px;
+		//height: 75px;
+		margin: 13px 13px;
+	}
+	.hi-icon:before {
+		
+		font-size: 38px;
+		line-height: 75px;
+	}
+	nav > li > a {
+		
+		padding: 0 1em;
+	}
+
+}
+@media screen and (max-width: 620px){
+	
+	header{
+		article{@include row();}
+			.icon-wrap{@include span-columns(12);}
+	}
+	.hi-icon{
+		width: 55px;
+		//height: 85px;
+		margin: 10px 10px;
+	}
+	.hi-icon:before {
+		
+		font-size: 28px;
+		line-height: 55px;
+	}
+
+}
+@media screen and (max-width: 520px){
+	header{
+		padding: 4em 0 2em 0;
+		img{width:70%;}}
+	.topbar{
+		position:fixed;
+		top:0;
+		left:0;
+		z-index:9999;
+		visibility:visible;
+		display:block;
+		
+	}
+	.js nav[role=navigation] {
+		overflow: hidden;
+		max-height: 0;
+	}
+	nav[role=navigation].active {
+		min-height:25em;
+		max-height: 25em;
+	}
+	nav {
+		border-bottom: none;
+		background:none;
+		font-size: 80%;
+		position: fixed;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+		top: 50px;
+		left:0;
+		z-index:8000;
+	}
+
+	nav > li {
+		display: block;
+		margin: 0;
+		border-bottom: 1px solid $grey_light;
+		background:#fff;
+	}
+
+	nav ul > li:first-child {
+		border-top: 1px solid $grey_light;
+	}
+
+	li.cbp-tm-show > a,
+	.no-touch nav > li > a:hover,
+	.no-touch nav > li > a:active {
+		color: #fff;
+		background: $primary;
+	}
+
+	.cbp-tm-submenu {
+		font-size: 90%;
+		position: relative;
+		display: none;
+		width: 100%;
+	}
+
+	.cbp-tm-submenu > li {
+		padding: 0;
+	}
+
+	.cbp-tm-submenu > li > a {
+		padding: 0.6em 2.3em 0.6em 0.6em;
+		border: none;
+		border-bottom: 1px solid $grey_light;
+	}
+
+	.cbp-tm-submenu:after {
+		display: none;
+	}
+
+	nav .cbp-tm-show .cbp-tm-submenu {
+		display: block;
+		width: 100%;
+		left: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+	section.intro{	
+		>div{@include pad(0 default);}
+		.display {@include span-columns(12); text-align: center;}
+		.info{@include span-columns(12);
+		section{@include span-columns(12); margin-bottom:30px;
+			h3{text-align:center;}
+			div.icon{ @include span-columns(12); text-align:center; background:$primary; color:$secondary;
+			>h3 {color:$primary; font-size: 80%; display:none;}
+		}
+		article{
+			@include span-columns(12);
+			background:$grey_light;
+			border:0;
+			padding-right:10px;
+		} 
+	}
+	}
+}
+	
+
+}
+
+
+@media screen and (max-width: 320px){
+	header{
+		padding: 50px 0 20px 0;
+		section {
+			article{
+				div.hi-icon-wrap{
+					@include span-columns(12);
+					
+						h2 {color:#fff; line-height:35px; 
+						}
+						h3 {color:$secondary; 
+						}
+				}
+			}
+	}
+}
+section.content{
+		section.left{
+			aside{
+				article{
+					@include span-columns(12, 0px); 
+					margin-bottom:10px;
+					h3{text-align:center; display:none;}
+
+				div.icon{ @include span-columns(12); 
+					text-align:center; 
+					background:$primary; 
+					color:$secondary;
+					>h3 {color:white; font-size: 70%; display:block; margin:-10px 0 20px 0;}
+				}
+				section{
+					display:none;
+
+				} 
+			}
+		}
+	}
+section.preview{
+		padding:40px 0 40px 0;
+		margin-bottom:80px;
+		
+		li{
+			@include span-columns(6);
+			}
+		
+	}
+
+}
+
+
+}
+
+
